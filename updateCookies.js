@@ -11,7 +11,7 @@ module.exports = async function updateCookies() {
     try {
       let executablePath
 
-      if (os.type().toLowerCase().includes('Windows')) {
+      if (os.type().toLowerCase().includes('windows')) {
         console.log(`Windows detected`)
         executablePath = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
       } else {
