@@ -1,10 +1,10 @@
 const express = require('express')
 const ytdl = require('@distube/ytdl-core')
 const router = express.Router()
-const cookies = require('../cookies.json')
-const agent = ytdl.createAgent(cookies, {})
 
 router.get('/', async (req, res) => {
+  const cookies = require('../cookies.json')
+  const agent = ytdl.createAgent(cookies, {})
   const videoUrl = req.query.url
 
   if (!videoUrl || !ytdl.validateURL(videoUrl)) {
