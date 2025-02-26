@@ -12,16 +12,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@distube/ytdl-core": "^4.16.4",
     "@types/express": "^5.0.0",
+    "@types/express-rate-limit": "^6.0.2",
+    "apify-client": "^2.12.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "https-proxy-agent": "^7.0.6",
-    "play-dl": "^1.9.7",
+    "express-rate-limit": "^7.5.0",
     "prettier": "^3.5.2"
   },
   "devDependencies": {
-    "cors": "^2.8.5",
-    "puppeteer": "^24.3.0"
+    "cors": "^2.8.5"
   }
 }
