@@ -1,13 +1,8 @@
 const express = require('express')
-// const { HttpsProxyAgent } = require('https-proxy-agent')
 const ytdl = require('@distube/ytdl-core')
 const router = express.Router()
-// const cookies = require('../cookies.json')
-// const agent = ytdl.createAgent(cookies, {})
-
-// const agent = new HttpsProxyAgent(
-//   'http://mujollbl:en2pk8knf75n@171.22.248.186:6078',
-// )
+const cookies = require('../cookies.json')
+const agent = ytdl.createAgent(cookies, {})
 
 router.get('/', async (req, res) => {
   const videoUrl = req.query.url
@@ -17,10 +12,7 @@ router.get('/', async (req, res) => {
   }
 
   try {
-    const info = await ytdl.getBasicInfo(
-      videoUrl,
-      // { agent }
-    )
+    const info = await ytdl.getBasicInfo(videoUrl, { agent })
     const videoTitle = info.videoDetails.title.replace(/[^\w\s]/gi, '')
 
     res.header(
@@ -32,7 +24,7 @@ router.get('/', async (req, res) => {
     ytdl(videoUrl, {
       format: 'mp4',
       quality: 'highest',
-      // agent,
+      agent,
     }).pipe(res)
   } catch (error) {
     console.error(error)
