@@ -21,6 +21,7 @@
     "prettier": "^3.5.2"
   },
   "devDependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "puppeteer": "^24.3.0"
   }
 }
